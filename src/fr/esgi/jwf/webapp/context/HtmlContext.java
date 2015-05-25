@@ -1,6 +1,10 @@
 package fr.esgi.jwf.webapp.context;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +14,17 @@ import org.esgi.web.framework.context.interfaces.IHtmlContext;
 public class HtmlContext implements IHtmlContext {
 
 	private String actionClass;
+	private HttpServletRequest request;
+	private HttpServletResponse response;
+	private Map<String, Object> parameters = new HashMap<String, Object>();
+	private List<File> uploadedFiles = new ArrayList<File>();
+	private Map<String, Object> attributes = new HashMap<String, Object>();
+	private Map<String, Object> sessionAttribute = new HashMap<String, Object>();
+	private String title;
+	private String description;
+	private List<String> keywords = new ArrayList<String>();
+	private List<String> cssLinks = new ArrayList<String>();
+	private List<String> jsLinks = new ArrayList<String>();
 
 	@Override
 	public void setActionClass(String actionClass) {
@@ -23,134 +38,114 @@ public class HtmlContext implements IHtmlContext {
 
 	@Override
 	public HttpServletRequest _getRequest() {
-		// TODO Auto-generated method stub
-		return null;
+		return request;
 	}
 
 	@Override
 	public HttpServletResponse _getResponse() {
-		// TODO Auto-generated method stub
-		return null;
+		return response;
 	}
 
 	@Override
 	public Object getParameter(String key) {
-		// TODO Auto-generated method stub
-		return null;
+		return parameters.get(key);
 	}
 
 	@Override
 	public String[] getParameterKeys() {
-		// TODO Auto-generated method stub
-		return null;
+		return (String[]) parameters.keySet().toArray();
 	}
 
 	@Override
 	public File[] getUploadedFiles() {
-		// TODO Auto-generated method stub
-		return null;
+		return (File[]) uploadedFiles.toArray();
 	}
 
 	@Override
 	public void setAttribute(String key, Object o) {
-		// TODO Auto-generated method stub
-
+		attributes.put(key, o);
 	}
 
 	@Override
 	public Object getAttribute(String key) {
-		// TODO Auto-generated method stub
-		return null;
+		return attributes.get(key);
 	}
 
 	@Override
 	public void setSessionAttribute(String key, Object value) {
-		// TODO Auto-generated method stub
-
+		sessionAttribute.put(key, value);
 	}
 
 	@Override
 	public Object getSessionAttribute(String key) {
-		// TODO Auto-generated method stub
-		return null;
+		return sessionAttribute.get(key);
 	}
 
 	@Override
 	public String[] getUserCredentials() {
-		// TODO Auto-generated method stub
+		// TODO
 		return null;
 	}
 
 	@Override
 	public boolean resetSession() {
-		// TODO Auto-generated method stub
+		// TODO
 		return false;
 	}
 
 	@Override
 	public IHtmlContext toHtmlContext() {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
 	public void setPageTitle(String title) {
-		// TODO Auto-generated method stub
-
+		this.title = title;
 	}
 
 	@Override
 	public void setPageDescription(String description) {
-		// TODO Auto-generated method stub
-
+		this.description = description;
 	}
 
 	@Override
 	public void addKeyword(String keyword) {
-		// TODO Auto-generated method stub
-
+		keywords.add(keyword);
 	}
 
 	@Override
 	public void addCssLink(String url) {
-		// TODO Auto-generated method stub
-
+		cssLinks.add(url);
 	}
 
 	@Override
 	public void addJsLink(String url) {
-		// TODO Auto-generated method stub
-
+		jsLinks.add(url);
 	}
 
 	@Override
 	public String getPageTitle() {
-		// TODO Auto-generated method stub
-		return null;
+		return title;
 	}
 
 	@Override
 	public String getPageDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return description;
 	}
 
 	@Override
 	public String[] getKeywords() {
-		// TODO Auto-generated method stub
-		return null;
+		return (String[]) keywords.toArray();
 	}
 
 	@Override
 	public String[] getCssLinks() {
-		// TODO Auto-generated method stub
-		return null;
+		return (String[]) cssLinks.toArray();
 	}
 
 	@Override
 	public String[] getJsLinks() {
-		// TODO Auto-generated method stub
-		return null;
+		return (String[]) jsLinks.toArray();
 	}
 
 }

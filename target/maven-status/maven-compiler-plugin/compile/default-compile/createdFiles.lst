@@ -8,6 +8,7 @@ fr/esgi/jwf/webapp/router/Dispatcher.class
 fr/esgi/jwf/persistance/entite/Utilisateur.class
 fr/esgi/jwf/webapp/renderer/html/ListRerendererHtml.class
 fr/esgi/jwf/persistance/entite/Note.class
+fr/esgi/jwf/webapp/renderer/LogInRenderer.class
 fr/esgi/jwf/webapp/router/UserRoute$1.class
 fr/esgi/jwf/persistance/dao/impl/DefaultNoteDao.class
 fr/esgi/jwf/persistance/dao/core/Dao.class
@@ -16,7 +17,6 @@ fr/esgi/jwf/webapp/enums/ActionEnum.class
 fr/esgi/jwf/webapp/context/Context.class
 fr/esgi/jwf/persistance/dao/core/impl/DefaultDao.class
 fr/esgi/jwf/webapp/enums/FormatEnum.class
-fr/esgi/jwf/webapp/renderer/LgRenderer.class
 fr/esgi/jwf/webapp/router/UserRoute.class
 fr/esgi/jwf/webapp/action/LogoutAction.class
 fr/esgi/jwf/webapp/renderer/json/ListRerendererJson.class

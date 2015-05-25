@@ -6,7 +6,6 @@
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/persistance/dao/core/Dao.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/persistance/entite/Note.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/persistance/dao/core/impl/DefaultDao.java
-/Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/renderer/LgRenderer.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/action/LogoutAction.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/persistance/dao/NoteDao.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/enums/FormatEnum.java
@@ -18,5 +17,6 @@
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/persistance/dao/impl/DefaultNoteDao.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/persistance/entite/Utilisateur.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/action/CreateAction.java
+/Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/renderer/LogInRenderer.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/action/error/ErrorAction.java
 /Users/BnJ/Documents/Programmation/Java/JWF/src/fr/esgi/jwf/webapp/renderer/json/ListRerendererJson.java

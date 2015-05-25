@@ -10,7 +10,7 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.esgi.web.framework.context.interfaces.IContext;
 import org.esgi.web.framework.renderer.interfaces.IRenderer;
 
-import fr.esgi.jwf.webapp.context.HtmlContext;
+import fr.esgi.jwf.webapp.context.Context;
 
 public class LogInRenderer implements IRenderer {
 
@@ -24,17 +24,22 @@ public class LogInRenderer implements IRenderer {
 				ClasspathResourceLoader.class.getName());
 		ve.init();
 
-		Template t = ve.getTemplate("index.vm");
+		Template t = ve.getTemplate("fr/esgi/jwf/webapp/renderer/index.vm");
 
 		VelocityContext contextV = new VelocityContext();
-		HtmlContext htmlContext = (HtmlContext) context.toHtmlContext();
+
+		Context htmlContext = (Context) context.toHtmlContext();
 		htmlContext.setPageTitle("Super Titre de Page");
+		htmlContext
+				.setPageDescription("Ceci est une super description de la page");
 		contextV.put("context", htmlContext);
 
 		StringWriter writer = new StringWriter();
 		t.merge(contextV, writer);
 
-		return writer.toString();
+		return "hello world";
+
+		// return writer.toString();
 	}
 
 }

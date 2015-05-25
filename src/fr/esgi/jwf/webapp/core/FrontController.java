@@ -13,7 +13,6 @@ import org.esgi.web.framework.router.interfaces.IDispatcher;
 import org.esgi.web.framework.router.interfaces.IRewriter;
 
 import fr.esgi.jwf.webapp.context.Context;
-import fr.esgi.jwf.webapp.enums.ActionEnum;
 import fr.esgi.jwf.webapp.router.Dispatcher;
 import fr.esgi.jwf.webapp.router.Rewriter;
 import fr.esgi.jwf.webapp.router.UserRoute;
@@ -30,7 +29,7 @@ public class FrontController extends HttpServlet implements IFrontController {
 	public void init() throws ServletException {
 		super.init();
 		dispatcher = new Dispatcher();
-		rewriter = new Rewriter(new UserRoute(ActionEnum.CREATE));
+		rewriter = new Rewriter(new UserRoute());
 	}
 
 	@Override
