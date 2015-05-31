@@ -1,101 +1,71 @@
 package fr.esgi.jwf.webapp.action;
 
-import java.io.IOException;
+import java.util.List;
 
-import org.apache.velocity.app.VelocityEngine;
 import org.esgi.web.framework.action.interfaces.IActionRenderable;
 import org.esgi.web.framework.context.interfaces.IContext;
 import org.esgi.web.framework.renderer.interfaces.IRenderer;
 
-import fr.esgi.jwf.webapp.model.User;
+import fr.esgi.jwf.service.AnnonceService;
+import fr.esgi.jwf.service.impl.DefaultAnnonceService;
+import fr.esgi.jwf.webapp.renderer.CreateRenderer;
+import fr.esgi.jwf.webapp.renderer.IndexRenderer;
 
 public class CreateAction implements IActionRenderable {
 
-	public User user;
 	private IRenderer renderer;
 	private IContext context;
+	private List<String> roles;
+	private int priority;
 
 	@Override
 	public int setPriority(int priority) {
-		// TODO Auto-generated method stub
-		return 0;
+		this.priority = priority;
+		return priority;
 	}
 
 	@Override
 	public int getPriority() {
-		// TODO Auto-generated method stub
-		return 0;
+		return priority;
 	}
 
 	@Override
 	public void addCredential(String role) {
-		// TODO Auto-generated method stub
-
+		this.roles.add(role);
 	}
 
 	@Override
 	public boolean needsCredentials() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean hasCredential(String[] roles) {
-		// TODO Auto-generated method stub
+
+		for (String role : roles) {
+			if (this.roles.contains(role)) {
+				return true;
+			}
+		}
+
 		return false;
 	}
 
 	@Override
 	public void proceed(IContext context) {
-
-		VelocityEngine v = new VelocityEngine();
-
-		try {
-			context._getResponse().getOutputStream()
-					.println("<b>Create action</b><br />");
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
 		this.context = context;
 
-		String[] loginTab = (String[]) context.getParameter("login");
-		String[] passwordTab = (String[]) context.getParameter("password");
-
-		if (loginTab != null && passwordTab != null) {
-			String login = loginTab[0];
-			String password = passwordTab[0];
-
-			if (login != null && !login.isEmpty() && password != null
-					&& !password.isEmpty()) {
-
-				User user = new User();
-				user.login = login;
-				user.password = password;
-				User.addUser(user);
-
-				try {
-					context._getResponse().getOutputStream()
-							.println("<b>User created</b><br />");
-					context._getResponse().getOutputStream()
-							.println("<h4><a href='JWF/list'>List</a></h4>");
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			} else {
-				try {
-					context._getResponse().getOutputStream()
-							.println("<h1>Can not create this user</h1><br />");
-					context._getResponse().getOutputStream()
-							.println("<h4><a href='JWF/list'>List</a></h4>");
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-
+		if (context._getRequest().getParameter("titre") == null) {
+			this.setRenderer(new CreateRenderer());
+		} else {
+			this.setRenderer(new IndexRenderer());
+			AnnonceService annonceService = new DefaultAnnonceService();
+			annonceService.sauvegarder(
+					context._getRequest().getParameter("titre"), context
+							._getRequest().getParameter("annonce"));
 		}
 
+		this.render();
 	}
 
 	@Override

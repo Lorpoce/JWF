@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<link rel="icon" href="../../favicon.ico">
+
+<title>$context.getPageTitle()</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<h1>Les annonces</h1>
+	<a href="JWF/create">
+		<h3>
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			Rajouter une annonce
+		</h3>
+	</a>
+	
+	
+	<div class="list-group">
+		#foreach( $annonce in $annonces ) 
+		<a href="$annonce.getId()"
+			class="list-group-item">
+			<h4 class="list-group-item-heading">$annonce.getTitre()</h4>
+			<p class="list-group-item-text">$annonce.getAnnonce()</p>
+		</a> 
+		#end
+	</div>
+
+</body>
+</html>
