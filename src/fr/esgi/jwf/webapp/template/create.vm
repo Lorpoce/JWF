@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<link rel="icon" href="../../favicon.ico">
+
+<title>$context.getPageTitle()</title>
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+	rel="stylesheet">
+
+</head>
+
+<body>
+
+
+	<form class="form-horizontal">
+		<fieldset>
+
+			<!-- Form Name -->
+			<h1>Postez votre annonce</h1>
+
+			<!-- Text input-->
+			<div class="control-group">
+				<label class="control-label" for="titre"></label>
+				<div class="controls">
+					<input id="titre" name="titre" type="text" placeholder="Titre"
+						class="form-control">
+
+				</div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+				<label class="control-label" for="annonce"></label>
+				<div class="controls">
+					<textarea id="annonce" class="form-control" rows="10"
+						name="annonce">Annonce</textarea>
+				</div>
+			</div>
+
+			<!-- Button -->
+			<div class="control-group">
+				<label class="control-label" for="save"></label>
+				<div class="controls">
+					<button id="save" name="save" class="btn btn-primary">Poster</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+
+
+</body>
+</html>
