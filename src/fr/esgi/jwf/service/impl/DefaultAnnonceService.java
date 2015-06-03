@@ -28,4 +28,10 @@ public class DefaultAnnonceService implements AnnonceService {
 		annonceDao.sauvegarder(a);
 	}
 
+	@Override
+	public Annonce recupererAnnonce(long id) {
+		AnnonceDao annonceDao = new DefaultAnnonceDao();
+		return annonceDao.recupererAnnonce(id);
+	}
+
 }

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<link rel="icon" href="../../favicon.ico">
+
+<title>$context.getPageTitle()</title>
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+	rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">$annonce.getTitre()</h3>
+		</div>
+		<div class="panel-heading">
+			<h5 class="panel-title">$annonce.getPseudo()</h5>
+		</div>
+		<div class="panel-body">annonce.getAnnonce()</div>
+	</div>
+
+</body>
+</html>

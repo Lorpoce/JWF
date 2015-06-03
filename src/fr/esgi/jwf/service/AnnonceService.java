@@ -10,4 +10,6 @@ public interface AnnonceService {
 
 	void sauvegarder(String titre, String pseudo, String annonce);
 
+	Annonce recupererAnnonce(long id);
+
 }

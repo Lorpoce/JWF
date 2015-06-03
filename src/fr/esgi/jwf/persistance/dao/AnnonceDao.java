@@ -10,4 +10,6 @@ public interface AnnonceDao {
 
 	void sauvegarder(Annonce annonce);
 
+	Annonce recupererAnnonce(long id);
+
 }

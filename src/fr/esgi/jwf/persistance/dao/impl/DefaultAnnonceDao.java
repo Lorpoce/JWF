@@ -40,4 +40,22 @@ public class DefaultAnnonceDao implements AnnonceDao {
 		transaction.commit();
 		session.close();
 	}
+
+	@Override
+	public Annonce recupererAnnonce(long id) {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(" select a ");
+		sb.append(" from ");
+		sb.append(Annonce.class.getCanonicalName());
+		sb.append(" a ");
+		sb.append(" where a.id = :id ");
+
+		Query query = HibernateUtil.getSessionFactory().openSession()
+				.createQuery(sb.toString());
+
+		query.setParameter("id", id);
+
+		return (Annonce) query.list().get(0);
+	}
 }

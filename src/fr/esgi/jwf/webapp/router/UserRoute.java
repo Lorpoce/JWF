@@ -4,6 +4,7 @@ import org.esgi.web.framework.context.interfaces.IContext;
 import org.esgi.web.framework.router.interfaces.IRewriteRule;
 
 import fr.esgi.jwf.webapp.action.CreateAction;
+import fr.esgi.jwf.webapp.action.DisplayAction;
 import fr.esgi.jwf.webapp.action.IndexAction;
 
 public class UserRoute implements IRewriteRule {
@@ -15,9 +16,10 @@ public class UserRoute implements IRewriteRule {
 
 	@Override
 	public void rewrite(IContext context) {
-
 		if (context._getRequest().getRequestURI().contains("create")) {
 			context.setActionClass(CreateAction.class.getCanonicalName());
+		} else if (context._getRequest().getRequestURI().contains("display")) {
+			context.setActionClass(DisplayAction.class.getCanonicalName());
 		} else {
 			context.setActionClass(IndexAction.class.getCanonicalName());
 		}
