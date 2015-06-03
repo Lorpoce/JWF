@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+<meta charset="UTF-8">
 <head>
 
 <link rel="icon" href="../../favicon.ico">
@@ -15,14 +16,19 @@
 
 <body>
 
+	<a href="JWF/index">
+		<h3>
+			<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+			Retour à l'accueil
+		</h3>
+	</a>
+
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">$annonce.getTitre()</h3>
+			<h5 class="panel-title">Par : $annonce.getPseudo()</h5>
 		</div>
-		<div class="panel-heading">
-			<h5 class="panel-title">$annonce.getPseudo()</h5>
-		</div>
-		<div class="panel-body">annonce.getAnnonce()</div>
+		<div class="panel-body">$annonce.getAnnonce()</div>
 	</div>
 
 </body>
