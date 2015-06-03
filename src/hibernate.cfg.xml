@@ -11,5 +11,6 @@
   <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
   <mapping class="fr.esgi.jwf.persistance.entite.Annonce"/>
+  <mapping class="fr.esgi.jwf.persistance.entite.Commentaire"/>
  </session-factory>
 </hibernate-configuration>

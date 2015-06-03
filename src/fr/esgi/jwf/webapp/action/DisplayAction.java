@@ -6,6 +6,9 @@ import org.esgi.web.framework.action.interfaces.IActionRenderable;
 import org.esgi.web.framework.context.interfaces.IContext;
 import org.esgi.web.framework.renderer.interfaces.IRenderer;
 
+import fr.esgi.jwf.service.CommentaireService;
+import fr.esgi.jwf.service.impl.DefaultCommentaireService;
+import fr.esgi.jwf.utils.StringUtils;
 import fr.esgi.jwf.webapp.renderer.DisplayRenderer;
 import fr.esgi.jwf.webapp.renderer.IndexRenderer;
 
@@ -57,6 +60,14 @@ public class DisplayAction implements IActionRenderable {
 			this.setRenderer(new IndexRenderer());
 		} else {
 			this.setRenderer(new DisplayRenderer());
+
+			if (!StringUtils.isNullOrEmpty(context._getRequest().getParameter(
+					"commentaire"))) {
+				sauvegarderCommentaire(Long.valueOf(context._getRequest()
+						.getParameter("id")), context._getRequest()
+						.getParameter("pseudo"), context._getRequest()
+						.getParameter("commentaire"));
+			}
 		}
 
 		this.render();
@@ -70,6 +81,12 @@ public class DisplayAction implements IActionRenderable {
 	@Override
 	public String render() {
 		return renderer.render(context);
+	}
+
+	private void sauvegarderCommentaire(long idAnnonce, String pseudo,
+			String commentaire) {
+		CommentaireService commentaireService = new DefaultCommentaireService();
+		commentaireService.sauvegarder(idAnnonce, pseudo, commentaire);
 	}
 
 }

@@ -15,7 +15,7 @@
 <body>
 
 	<h1>Les annonces</h1>
-	<a href="JWF/create">
+	<a href="create">
 		<h3>
 			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 			Rajouter une annonce
