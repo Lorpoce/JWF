@@ -56,7 +56,6 @@ public class IndexRenderer implements IRenderer {
 	}
 
 	private List<Annonce> recupererAnnonces() {
-
 		AnnonceService annonceService = new DefaultAnnonceService();
 		return annonceService.recupererAnnonces();
 	}

@@ -22,6 +22,15 @@
 			<!-- Form Name -->
 			<h1>Postez votre annonce</h1>
 
+			<div class="control-group">
+				<label class="control-label" for="pseudo"></label>
+				<div class="controls">
+					<input id="pseudo" name="pseudo" type="text" placeholder="Pseudo"
+						class="form-control">
+
+				</div>
+			</div>
+
 			<!-- Text input-->
 			<div class="control-group">
 				<label class="control-label" for="titre"></label>

@@ -8,6 +8,6 @@ public interface AnnonceService {
 
 	List<Annonce> recupererAnnonces();
 
-	void sauvegarder(String titre, String annonce);
+	void sauvegarder(String titre, String pseudo, String annonce);
 
 }

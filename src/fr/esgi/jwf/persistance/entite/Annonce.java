@@ -16,6 +16,8 @@ public class Annonce {
 
 	private String titre;
 
+	private String pseudo;
+
 	private String annonce;
 
 	public Annonce() {

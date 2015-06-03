@@ -6,6 +6,7 @@ import fr.esgi.jwf.persistance.dao.AnnonceDao;
 import fr.esgi.jwf.persistance.dao.impl.DefaultAnnonceDao;
 import fr.esgi.jwf.persistance.entite.Annonce;
 import fr.esgi.jwf.service.AnnonceService;
+import fr.esgi.jwf.utils.StringUtils;
 
 public class DefaultAnnonceService implements AnnonceService {
 
@@ -16,9 +17,11 @@ public class DefaultAnnonceService implements AnnonceService {
 	}
 
 	@Override
-	public void sauvegarder(String titre, String annonce) {
+	public void sauvegarder(String titre, String pseudo, String annonce) {
 		Annonce a = new Annonce();
-		a.setTitre(titre);
+		a.setTitre(!StringUtils.isNullOrEmpty(titre) ? titre
+				: "Annonce sans titre");
+		a.setPseudo(!StringUtils.isNullOrEmpty(pseudo) ? pseudo : "anon");
 		a.setAnnonce(annonce);
 
 		AnnonceDao annonceDao = new DefaultAnnonceDao();

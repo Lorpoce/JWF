@@ -62,6 +62,7 @@ public class CreateAction implements IActionRenderable {
 			AnnonceService annonceService = new DefaultAnnonceService();
 			annonceService.sauvegarder(
 					context._getRequest().getParameter("titre"), context
+							._getRequest().getParameter("pseudo"), context
 							._getRequest().getParameter("annonce"));
 		}
 

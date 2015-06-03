@@ -14,7 +14,7 @@
 <body>
 
 	<h1>Les annonces</h1>
-	<a href="JWF/create">
+	<a href="create">
 		<h3>
 			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 			Rajouter une annonce
@@ -27,6 +27,7 @@
 		<a href="$annonce.getId()"
 			class="list-group-item">
 			<h4 class="list-group-item-heading">$annonce.getTitre()</h4>
+			<h6 class="list-group-item-heading">$annonce.getPseudo()</h6>
 			<p class="list-group-item-text">$annonce.getAnnonce()</p>
 		</a> 
 		#end
